@@ -729,9 +729,6 @@ for yeardir in os.scandir(dir):
                         for file in os.scandir(daydir.path):
                             if file.path.endswith(".all"):
                                 #jiwoo
-                                #if os.path.basename(file) == 'zzren_gem_id11174226_3-25-44996-1495460099596156726_1.darshan.all' :
-                                #if os.path.basename(file) == 'fgoeltl_vasp-tpc_5.4.4-knl_std_id10908761_3-12-63283-5489352668014642401_1.darshan.all' :
-                                #if os.path.basename(file) == 'acmetest_theta-nlev30_id10736280_3-7-37816-16937835957214069847_1.darshan.all':
                                 tempList.append(file.path)
                             """
                             elif file.path.endswith(".darshan"):
