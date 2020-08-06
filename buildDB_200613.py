@@ -440,9 +440,9 @@ def process(file):
                         #get numCPU from SLURM
                         #figure out which th darshanfile with same jobID (to match SLURM)
                         cmd = "sacct -j " + str(jobID) + " --format=ncpus,nnodes,qos"
-                        '''
                         try:
                                 tempOut =  subprocess.check_output(cmd, shell=True)
+                                tempOut = tempOut.decode("utf-8")
                                 tempOut = tempOut.strip()
                                 tempOut = tempOut.split(" ")
                                 temp = []
@@ -457,10 +457,9 @@ def process(file):
                                 isknl = 0
                                 numCPU = 0
                                 numNode = 0     
-                        '''
-                        isknl = 0
-                        numCPU = 0
-                        numNode = 0
+                        #isknl = 0
+                        #numCPU = 0
+                        #numNode = 0
                         usedOSTName = []
 
                         if usedOST != []:
@@ -683,7 +682,7 @@ for yeardir in os.scandir(dir):
         year = int(os.path.basename(yeardir.path))
         for monthdir in os.scandir(yeardir.path):
                 month = int(os.path.basename(monthdir.path))
-                if month != 2:
+                if month != 4:
                         continue
                 for daydir in os.scandir(monthdir.path):
                         day = int(os.path.basename(daydir.path))
